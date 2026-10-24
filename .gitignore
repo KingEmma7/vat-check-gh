@@ -6,6 +6,7 @@ work/
 playwright-report/
 test-results/
 .lighthouseci/
+.wrangler/
 .DS_Store
 *.zip
 coverage/

@@ -2,6 +2,8 @@
 
 Search Ghana’s published digital-services merchant list, estimate VAT in cedis, and check the guidance for a possible incorrect charge. This free static app runs in your browser, with no accounts, trackers or bank integration.
 
+**[Open the live demo](https://vat-check-gh.etagbor.workers.dev)**
+
 **Independent and unofficial. Not tax or legal advice.** Registration does not prove that tax is included in a quoted price. Confirm your payment against the [official GRA guidance](https://gra.gov.gh/rtvat/).
 
 ![VAT Check GH search screen](docs/screenshots/home-desktop.png)

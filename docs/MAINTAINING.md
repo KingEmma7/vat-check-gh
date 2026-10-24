@@ -80,9 +80,20 @@ Source and issue templates: [github.com/KingEmma7/vat-check-gh](https://github.c
 
 ## Deploy
 
-`pnpm build` produces `out/`, suitable for a static host. Vercel should use the build command `pnpm build` and output directory `out`. Cloudflare Pages should use the same values. No runtime environment variables or secrets are required. Hosting security headers are included in `vercel.json` and `public/_headers`; confirm the target host applies them to HTML and nested merchant routes.
+The public demo is [vat-check-gh.etagbor.workers.dev](https://vat-check-gh.etagbor.workers.dev). `wrangler.jsonc` publishes only the static `out/` export through Cloudflare Workers Static Assets. There is no Worker script, runtime secret or data binding. Directory routes retain trailing slashes; unknown routes return the exported 404 page. Version preview URLs are disabled.
 
-Set the production origin in the single site configuration constant used by canonical URLs, sitemap and Open Graph images. Keep it consistent with the deployed origin. Preview addresses should not be promoted to a production canonical by accident.
+After the release checks below, an authenticated maintainer can publish with the pinned CLI:
+
+```sh
+pnpm install --frozen-lockfile
+pnpm build
+pnpm test:worker
+pnpm dlx wrangler@4.148.0 deploy
+```
+
+Use `pnpm dlx wrangler@4.148.0 dev --local` to inspect the same routing and headers locally before publication. The build generates `out/_headers` with per-page CSP hashes and common security headers. Keep that file with the export. Do not enable injected analytics, script rewriting or an SPA fallback. The host serves public assets; entered amounts remain in browser memory. Ordinary hosting access logs are separate from application data collection.
+
+The production origin is set once in `lib/seo.ts` and drives canonical URLs, sitemap and Open Graph images. Change it before rebuilding for another host. Confirm the live home and nested merchant routes, redirects, 404 status, image MIME types, security headers and offline reload after every deployment. The generated `vercel.json` remains available for an alternative static Vercel deployment with `pnpm build` and output directory `out`.
 
 ### Release checklist
 

@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-export const SITE_URL = 'https://vat-check-gh.neonorbit3.chatgpt.site';
+export const SITE_URL = 'https://vat-check-gh.etagbor.workers.dev';
 export const FAQ_URL = 'https://gra.gov.gh/wp-content/uploads/2026/10/RTVAT-Approved-FAQ.pdf';
 export const GRA_URL = 'https://gra.gov.gh/rtvat/';
 export function pageMetadata(title: string, path: string, description: string): Metadata {

@@ -1,10 +1,8 @@
 import { ImageResponse } from 'next/og';
 import { ogFonts } from '@/lib/og';
 export const dynamic = 'force-static';
-export const alt = 'VAT Check GH. Check Ghana digital VAT.';
-export const size = { width: 1200, height: 630 };
-export const contentType = 'image/png';
-export default async function Image() {
+const size = { width: 1200, height: 630 };
+export async function GET() {
   return new ImageResponse(
     <div
       style={{
