@@ -2,6 +2,8 @@
 
 ## Unreleased, 2026-10-24
 
+- Deploy the exact verified main-merge artifact to Cloudflare automatically, with protected credentials, stale-run and merged-PR checks, a public commit marker, live header/404 verification and documented rollback.
+
 - Prevent intermittent hydration recovery during fast page navigation by giving streamed page content its own Suspense boundary. Retain server-rendered content and verify rapid language changes, calculator navigation and offline use without browser errors.
 
 - Preserve the calculator when browser preference storage is blocked, label English fallback text accurately, and enlarge small control and link targets.

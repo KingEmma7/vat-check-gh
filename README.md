@@ -8,6 +8,8 @@ Search Ghana’s published digital-services merchant list, estimate VAT in cedis
 
 ![VAT Check GH search screen](docs/screenshots/home-desktop.png)
 
+Merged pull requests deploy automatically after the exact main commit passes CI. See the [deployment guide](docs/MAINTAINING.md#automatic-deployment-after-merge) for deployment checks and rollback.
+
 ## Run locally
 
 Use Node 22.19+ (Node 22 LTS is tested) and pnpm 9.15.9.
