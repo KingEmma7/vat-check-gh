@@ -3,11 +3,14 @@
   --font-sans: 'Instrument Sans', sans-serif;
 }
 :root {
-  --paper: #f7f5f0;
-  --ink: #1a1a1a;
-  --muted: #75716a;
-  --line: #d7d3cc;
+  --paper: #f4f5ed;
+  --ink: #173c32;
+  --muted: #526b5f;
+  --line: #c7d4c4;
   --accent: #b42318;
+  --forest: #164c3d;
+  --gold: #d9b35c;
+  --surface: #e7eee2;
 }
 * {
   box-sizing: border-box;
@@ -91,7 +94,7 @@ textarea:focus-visible {
   outline: 2px solid var(--ink);
 }
 ::selection {
-  background: #dedbd5;
+  background: #e8d59b;
   color: var(--ink);
 }
 .header,
@@ -116,13 +119,31 @@ textarea:focus-visible {
   min-height: 48px;
 }
 .brand {
-  font-size: 24px;
+  font-size: 20px;
   font-weight: 600;
   letter-spacing: -0.6px;
   text-decoration: none;
   display: flex;
   min-height: 48px;
   align-items: center;
+  gap: 12px;
+}
+.brand img {
+  flex: none;
+  border-radius: 12px;
+}
+.home-title {
+  max-width: 420px;
+  margin: 4px 0 12px;
+  font-size: clamp(36px, 5vw, 48px);
+  line-height: 1.08;
+  letter-spacing: -0.035em;
+}
+.home-intro {
+  max-width: 410px;
+  margin: 0 0 28px;
+  color: #405d50;
+  line-height: 1.6;
 }
 .language,
 .text-button {
@@ -216,7 +237,7 @@ textarea:focus-visible {
 .input {
   width: 100%;
   border: 1px solid var(--ink);
-  border-radius: 0;
+  border-radius: 8px;
   background: #fff;
   min-height: 56px;
   padding: 16px;
@@ -271,7 +292,7 @@ textarea:focus-visible {
   align-items: center;
   justify-content: center;
   border: 1px solid var(--ink);
-  border-radius: 0;
+  border-radius: 8px;
   background: var(--ink);
   color: var(--paper);
   padding: 8px 16px;
@@ -281,14 +302,14 @@ textarea:focus-visible {
   gap: 8px;
 }
 .button:hover {
-  background: #3a3937;
+  background: #276652;
 }
 .button-light {
   background: transparent;
   color: var(--ink);
 }
 .button-light:hover {
-  background: #e9e6df;
+  background: var(--surface);
 }
 .button svg {
   display: none;
@@ -329,10 +350,14 @@ textarea:focus-visible {
 }
 .search-area {
   width: 100%;
+  background: var(--forest);
+  padding: 20px;
+  border-radius: 14px;
 }
 .search-field {
   background: #fff;
-  border: 1px solid var(--ink);
+  border: 1px solid var(--gold);
+  border-radius: 10px;
   min-height: 64px;
   display: flex;
   align-items: center;
@@ -363,9 +388,15 @@ textarea:focus-visible {
 .search-field .text-button {
   margin: 0 8px;
 }
+.search-area > [role='status'] .help,
+.search-area > [role='status'] .error {
+  color: #fff;
+}
 .search-results {
   margin-top: 16px;
-  border-bottom: 1px solid var(--line);
+  padding: 12px;
+  background: var(--paper);
+  border-radius: 8px;
 }
 .search-results-heading {
   font-size: 14px;
@@ -390,7 +421,7 @@ textarea:focus-visible {
 }
 .search-option.selected,
 .search-option:hover {
-  background: #e9e6df;
+  background: var(--surface);
   outline: 1px solid var(--ink);
   outline-offset: -1px;
 }
@@ -521,7 +552,7 @@ textarea:focus-visible {
   min-height: 48px;
   background: transparent;
   border: 1px solid var(--line);
-  border-radius: 0;
+  border-radius: 8px;
   padding: 8px 16px;
   text-align: left;
   color: var(--ink);
@@ -603,11 +634,13 @@ fieldset {
   min-height: 56px;
   padding: 16px;
   border: 1px solid var(--line);
+  border-radius: 8px;
   cursor: pointer;
   font-size: 14px;
 }
 .choice:has(input:checked) {
   border-color: var(--ink);
+  background: var(--surface);
   font-weight: 600;
 }
 .choice input {
