@@ -1,12 +1,14 @@
 'use client';
 import Link from 'next/link';
+import Image from 'next/image';
 import { useLanguage, TranslatedText } from '@/lib/i18n';
 import { sourceDateLabel, merchantSourceUrl } from '@/lib/source';
 import { GRA_URL } from '@/lib/seo';
 export function Brand() {
   return (
     <Link className="brand" href="/" aria-label="VAT Check GH home">
-      VAT Check GH
+      <Image src="/brand-mark.svg" width={44} height={44} alt="" />
+      <span>VAT Check GH</span>
     </Link>
   );
 }

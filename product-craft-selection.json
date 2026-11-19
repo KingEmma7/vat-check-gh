@@ -1,0 +1,7 @@
+{
+  "task": "VAT Check GH visual theme and identity",
+  "registrySha256": "a5b697449b91c411f7dcc81a6ab340601c36f6141b3f58bd3c45763c5b70bc96",
+  "selection": [],
+  "assessment": "Reviewed all 24 approved components. Filtered View is an inventory URL filter with different ownership and record schemas; replacing the established accessible merchant combobox would break its exact matching, aliases and legal-entity workflow. Fluid Tabs owns panel selection, while this project uses Radix ToggleGroup for calculation choices. Gallery, animation and decorative controls do not aid this task. The existing controls retain their semantics and receive theme styling.",
+  "verification": "Check keyboard search, calculator, result states, focus and responsive layout."
+}
